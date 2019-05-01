@@ -30,7 +30,6 @@
 
 .macro asm_function_helper function_name
     .global \function_name
-.func \function_name
 \function_name:
 #ifdef __amd64__
   #ifdef _WIN64
