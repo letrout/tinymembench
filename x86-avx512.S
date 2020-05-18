@@ -100,7 +100,7 @@ asm_function aligned_block_copy_nt_avx512
 asm_function aligned_block_copy_pf32_avx512
 0:
     prefetchnta [SRC + PREFETCH_DISTANCE]
-    prefetchnta [SRC + PREFETCH_DISTANCE + REGSZ]
+    prefetchnta [SRC + PREFETCH_DISTANCE + 32]
     vmovdqa64      zmm0,       [SRC + (0 * REGSZ)]
     vmovdqa64      zmm1,       [SRC + (1 * REGSZ)]
     vmovdqa64      zmm2,       [SRC + (2 * REGSZ)]
@@ -119,7 +119,7 @@ asm_function aligned_block_copy_pf32_avx512
 asm_function aligned_block_copy_nt_pf32_avx512
 0:
     prefetchnta [SRC + PREFETCH_DISTANCE]
-    prefetchnta [SRC + PREFETCH_DISTANCE + REGSZ]
+    prefetchnta [SRC + PREFETCH_DISTANCE + 32]
     vmovdqa64      zmm0,       [SRC + (0 * REGSZ)]
     vmovdqa64      zmm1,       [SRC + (1 * REGSZ)]
     vmovdqa64      zmm2,       [SRC + (2 * REGSZ)]
